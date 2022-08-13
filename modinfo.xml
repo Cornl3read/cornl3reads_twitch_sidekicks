@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xml>
+	<ModInfo>
+		<Name value="Cornl3read_integration_v1" />
+		<Description value="Twitch integration changes > Added Things To Help You." />
+		<Author value="Cornl3read" />
+		<Version value="1.0" />
+		<Website value="https://Stiki.info" />
+	</ModInfo>
+</xml>
