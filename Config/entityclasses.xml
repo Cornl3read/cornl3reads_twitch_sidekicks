@@ -1,6 +1,6 @@
 <config>
 	<set xpath="/entity_classes">
-        <entity_class name="animalWolfFriendly" extends="animalTemplateHostile">
+        <entity_class name="animalWolfFriend" extends="animalTemplateHostile">
             <property name="Tags" value="entity,animal,hostile,wolf,perkAT02,perkAT03"/>
             <property name="MapIcon" value="ui_game_symbol_tracking_wolf"/>
             <property name="TrackerIcon" value="ui_game_symbol_tracking_wolf"/>
