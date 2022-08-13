@@ -1,5 +1,5 @@
 <config>
-	<set xpath="/gameevents/@max_entities">60</set>
+	<set xpath="/gameevents/@max_entities">64</set>
 	<append xpath="/gameevents">
 
 	<action_sequence name="spawn_sidekick" template="spawn_single">
@@ -19,6 +19,89 @@
 		<variable name="alertsound" value="bearalert" />
 		<variable name="gamestage" value="120" />
 	</action_sequence>
+
+	<action_sequence name="#thunderdome">
+
+		<property name="refund_inactivity" value="false"/>
+		<property name="category" value="twitch_actions"/>
+
+		<action class="AddPartyToGroup">
+			<property name="phase" value="0" />
+			<property name="group_name" value="goodGuys" />
+		</action>
+
+		<action class="Delay">
+			<property name="time" value="5" />
+			<property name="phase" value="0" />
+		</action>
+
+		<action class="PlaySound">
+			<property name="sound" value="hulkalert" />
+			<property name="phase" value="1" />
+		</action>
+
+		<action class="Delay">
+			<property name="time" value="1" />
+			<property name="phase" value="1" />
+		</action>
+
+		<action class="PlaySound">
+			<property name="sound" value="wolfalert" />
+			<property name="phase" value="2" />
+		</action>
+
+		<action class="Delay">
+			<property name="time" value="1" />
+			<property name="phase" value="2" />
+		</action>
+
+		<action class="SpawnEntity">
+				<property name="phase" value="3" />
+				<property name="min_distance" value="8" />
+				<property name="max_distance" value="12" />
+				<property name="entity_names" value="animalBigWolfFriend" param1="zombiename" />
+				<property name="add_to_group" value="goodGuys" />
+				<property name="spawn_count" value="2" />
+				<property name="party_addition" value="1" />
+		</action>
+
+		<action class="Delay">
+			<property name="time" value="5" />
+			<property name="phase" value="3" />
+		</action>
+
+		<action class="SpawnEntity">
+			<property name="phase" value="4" />
+			<property name="min_distance" value="6" />
+			<property name="max_distance" value="12" />
+			<property name="entity_names" value="zombieArlene,zombieMarlene,zombiePartyGirl,zombieNurse,zombieYo" param1="zombiename" />
+			<property name="add_to_group" value="badGuys" />
+			<property name="spawn_count" value="20" />
+			<property name="party_addition" value="1" />
+		</action>
+
+		<action class="WaitForDead">
+			<property name="target_group" value="badGuys" />
+			<property name="phase_on_despawn" value="6" /><!-- will be changed later to last phase -->
+			<property name="phase" value="5" />
+		</action>
+		<!-- to do
+			Teleport group to POI - Thunderdome(need this!)
+	        spawn a few weak zombies outside in a diff group "Lurkers" to bang stuff for ambiance :)
+			check if animalDireWolfFriend x2 still alive and spawn replacements
+			spawn a weapon and ammo crate t2 for each player
+			sort group and spawn next zombie wave inside of dome with players
+			add to group
+			Rinse and repeat with meds as the crates or food
+			waves intensify and animal friend eventually becomes a zombie bear
+			then.... Epic Finale. You gonna die now
+		-->
+
+
+	</action_sequence>
+
+
+
 
     </append>
 </config>
