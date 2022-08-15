@@ -38,7 +38,7 @@
 		</action>
 
 		<action name="twitch_thunderdome">
-			<property name="command" value="#enter_thunderdome" />
+			<property name="command" value="#thunderdome" />
 			<property name="start_gamestage" value="1" />
 			<property name="event_name" value="thunderdome" />
 			<property name="default_cost" value="1000" />
