@@ -39,6 +39,9 @@
 
 		<action name="twitch_thunderdome">
 			<property name="command" value="#thunderdome" />
+			<property name="command_key" value="TwitchAction_ThunderdomeCommand" />
+			<property name="title_key" value="TwitchAction_Thunderdome" />
+			<property name="description_key" value="TwitchAction_ThunderdomeDesc" />
 			<property name="start_gamestage" value="1" />
 			<property name="event_name" value="thunderdome" />
 			<property name="default_cost" value="1000" />
