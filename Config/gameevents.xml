@@ -5,27 +5,31 @@
 	<action_sequence name="spawn_sidekick" template="spawn_single">
 		<variable name="zombiename" value="animalWolfFriend" />
 		<variable name="alertsound" value="wolfalert" />
+		<variable name="gamestage" value="10" />
 	</action_sequence>
 
 	<action_sequence name="spawn_bigsidekick" template="spawn_single">
 		<variable name="zombiename" value="animalBigWolfFriend" />
 		<variable name="alertsound" value="wolfalert" />
-
+		<variable name="gamestage" value="30" />
 	</action_sequence>
-<!-- <variable name="gamestage" value="1" /> -->
+<!--  -->
 	<action_sequence name="spawn_deadsidekick" template="spawn_single">
 		<variable name="zombiename" value="animalDeadBearFriend" />
 		<variable name="alertsound" value="bearalert" />
+		<variable name="gamestage" value="55" />
 	</action_sequence>
 
 	<action_sequence name="spawn_superfriend" template="spawn_single">
 		<variable name="zombiename" value="animalBossGraceFriend" />
 		<variable name="alertsound" value="boaralert" />
+		<variable name="gamestage" value="100" />
 	</action_sequence>
 
 
 		<!-- Begin Thunderdome -->
 	<action_sequence name="thunderdome">
+		<variable name="gamestage" value="50" />
 		<property name="refund_inactivity" value="false"/>
 		<property name="category" value="twitch_actions"/>
 
@@ -204,6 +208,8 @@
 			<property name="max_distance" value="1000" />
 			<property name="phase" value="13" />
 		</action>
+
+
 
 		<!-- Boss Wave Next -->
 
