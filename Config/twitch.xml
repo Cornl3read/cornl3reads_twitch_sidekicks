@@ -10,8 +10,8 @@
 			<property name="description_key" value="TwitchAction_SpawnWolfFriendDesc" />
 			<property name="start_gamestage" value="1" />
 			<property name="event_name" value="spawn_sidekick" />
-			<property name="default_cost" value="200" />
-			<property name="cooldown" value="500" />
+			<property name="default_cost" value="150" />
+			<property name="cooldown" value="1000" />
 			<property name="enabled" value="true" />
 		</action>
 
@@ -25,7 +25,7 @@
 			<property name="start_gamestage" value="1" />
 			<property name="event_name" value="spawn_bigsidekick" />
 			<property name="default_cost" value="350" />
-			<property name="cooldown" value="500" />
+			<property name="cooldown" value="1000" />
 			<property name="enabled" value="true" />
 		</action>
 
@@ -39,7 +39,7 @@
 			<property name="start_gamestage" value="1" />
 			<property name="event_name" value="spawn_deadsidekick" />
 			<property name="default_cost" value="500" />
-			<property name="cooldown" value="500" />
+			<property name="cooldown" value="1000" />
 			<property name="enabled" value="true" />
 		</action>
 
@@ -52,11 +52,10 @@
 			<property name="description_key" value="TwitchAction_SpawnSuperFriendDesc" />
 			<property name="start_gamestage" value="1" />
 			<property name="event_name" value="spawn_superfriend" />
-			<property name="default_cost" value="500" />
-			<property name="cooldown" value="500" />
+			<property name="default_cost" value="1000" />
+			<property name="cooldown" value="1000" />
 			<property name="enabled" value="true" />
 		</action>
-
 
 		<action name="twitch_thunderdome">
 			<property name="category" value="Spawns" />
@@ -67,8 +66,8 @@
 			<property name="description_key" value="TwitchAction_ThunderdomeDesc" />
 			<property name="start_gamestage" value="1" />
 			<property name="event_name" value="thunderdome" />
-			<property name="default_cost" value="1000" />
-			<property name="cooldown" value="500" />
+			<property name="default_cost" value="10000" />
+			<property name="cooldown" value="1000" />
 			<property name="enabled" value="true" />
 		</action>
     </append>
