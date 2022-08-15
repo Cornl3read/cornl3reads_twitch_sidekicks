@@ -1,0 +1,20 @@
+<config>
+	<append xpath="/twitch_events">
+        <!-- Dey Gave Some Bitses to the precious -->
+        <bit_event event_title="Cop Bits" event_name="spawn_cop" start_amount="100" end_amount="300"
+		    safe_allowed="true" cooldown_allowed="true" vote_allowed="true" pimp_pot_add="50" />
+	    <bit_event event_title="Demo Bits" event_name="spawn_demo" start_amount="301" end_amount="600"
+		    safe_allowed="true" cooldown_allowed="true" vote_allowed="true" pimp_pot_add="20" />
+
+
+        <!-- Raiding the precious with 1-2 Raiders -->
+        <raid_event event_title="Cop Raid" event_name="spawn_cop" start_amount="1" end_amount="2" safe_allowed="true"
+                    cooldown_allowed="true" vote_allowed="true" pimp_pot_add="100"
+                    sp_add_amount="50" pp_add_amount="50" />
+
+        <!-- Raiding the precious With 3-5 Raiders Dey Is -->
+        <raid_event event_title="Sidekick Raid" event_name="spawn_sidekick" start_amount="3" end_amount="5" safe_allowed="true"
+                    cooldown_allowed="true" vote_allowed="true" pimp_pot_add="200"
+                    sp_add_amount="100" pp_add_amount="100" />
+    </append>
+</config>
