@@ -2,247 +2,255 @@
 	<set xpath="/gameevents/@max_entities">64</set>
 	<append xpath="/gameevents">
 
-	<action_sequence name="spawn_sidekick" template="spawn_single">
-		<variable name="zombiename" value="animalWolfFriend" />
-		<variable name="alertsound" value="wolfalert" />
-		<variable name="gamestage" value="10" />
-	</action_sequence>
+	<!-- Friendly Spawns -->
+		<!-- Wolf -->
+		<action_sequence name="spawn_sidekick" template="spawn_single">
+			<variable name="zombiename" value="animalWolfFriend" />
+			<variable name="alertsound" value="wolfalert" />
+			<variable name="gamestage" value="10" />
+		</action_sequence>
 
-	<action_sequence name="spawn_bigsidekick" template="spawn_single">
-		<variable name="zombiename" value="animalBigWolfFriend" />
-		<variable name="alertsound" value="wolfalert" />
-		<variable name="gamestage" value="30" />
-	</action_sequence>
-<!--  -->
-	<action_sequence name="spawn_deadsidekick" template="spawn_single">
-		<variable name="zombiename" value="animalDeadBearFriend" />
-		<variable name="alertsound" value="bearalert" />
-		<variable name="gamestage" value="55" />
-	</action_sequence>
+		<!-- Dire Wolf -->
+		<action_sequence name="spawn_bigsidekick" template="spawn_single">
+			<variable name="zombiename" value="animalBigWolfFriend" />
+			<variable name="alertsound" value="wolfalert" />
+			<variable name="gamestage" value="30" />
+		</action_sequence>
 
-	<action_sequence name="spawn_superfriend" template="spawn_single">
-		<variable name="zombiename" value="animalBossGraceFriend" />
-		<variable name="alertsound" value="boaralert" />
-		<variable name="gamestage" value="100" />
-	</action_sequence>
+		<!-- Zombie Bear -->
+		<action_sequence name="spawn_deadsidekick" template="spawn_single">
+			<variable name="zombiename" value="animalDeadBearFriend" />
+			<variable name="alertsound" value="bearalert" />
+			<variable name="gamestage" value="55" />
+		</action_sequence>
 
+		<!-- That One Skank everybody Hates -->
+		<action_sequence name="spawn_superfriend" template="spawn_single">
+			<variable name="zombiename" value="animalBossGraceFriend" />
+			<variable name="alertsound" value="boaralert" />
+			<variable name="gamestage" value="100" />
+		</action_sequence>
+
+
+	<!-- Events With Waves -->
 
 		<!-- Begin Thunderdome -->
-	<action_sequence name="thunderdome">
-		<variable name="gamestage" value="50" />
-		<property name="refund_inactivity" value="false"/>
-		<property name="category" value="twitch_actions"/>
+		<action_sequence name="thunderdome">
+			<variable name="gamestage" value="50" />
+			<property name="refund_inactivity" value="false"/>
+			<property name="category" value="twitch_actions"/>
 
-		<!-- Add all players in current party to group = goodGuys -->
-		<action class="AddPartyToGroup">
-			<property name="phase" value="0" />
-			<property name="group_name" value="goodGuys" />
-		</action>
+			<!-- Add all players in current party to group = goodGuys -->
+			<action class="AddPartyToGroup">
+				<property name="phase" value="0" />
+				<property name="group_name" value="goodGuys" />
+			</action>
 
-		<action class="Delay">
-			<property name="time" value="5" />
-			<property name="phase" value="0" />
-		</action>
+			<action class="Delay">
+				<property name="time" value="5" />
+				<property name="phase" value="0" />
+			</action>
 
-		<!-- Alert so that they know it's coming -->
-		<action class="PlaySound">
-			<property name="sound" value="hulkalert, wolfalert" />
-			<property name="phase" value="1" />
-		</action>
+			<!-- Alert so that they know it's coming -->
+			<action class="PlaySound">
+				<property name="sound" value="hulkalert, wolfalert" />
+				<property name="phase" value="1" />
+			</action>
 
-		<action class="Delay">
-			<property name="time" value="1" />
-			<property name="phase" value="1" />
-		</action>
+			<action class="Delay">
+				<property name="time" value="1" />
+				<property name="phase" value="1" />
+			</action>
 
-		<!-- Spawn Direwolf x2 with Zombie only Aggro and add to group goodGuys -->
-		<action class="SpawnEntity">
-			<property name="phase" value="2" />
-			<property name="min_distance" value="8" />
-			<property name="max_distance" value="12" />
-			<property name="entity_names" value="animalBigWolfFriend" param1="zombiename" />
-			<property name="add_to_group" value="goodGuys" />
-			<property name="spawn_count" value="2" />
-			<property name="party_addition" value="1" />
-		</action>
+			<!-- Spawn Direwolf x2 with Zombie only Aggro and add to group goodGuys -->
+			<action class="SpawnEntity">
+				<property name="phase" value="2" />
+				<property name="min_distance" value="8" />
+				<property name="max_distance" value="12" />
+				<property name="entity_names" value="animalBigWolfFriend" param1="zombiename" />
+				<property name="add_to_group" value="goodGuys" />
+				<property name="spawn_count" value="2" />
+				<property name="party_addition" value="1" />
+			</action>
 
-		<!-- 5 second wait for them to spawn -->
-		<action class="Delay">
-			<property name="time" value="5" />
-			<property name="phase" value="2" />
-		</action>
+			<!-- 5 second wait for them to spawn -->
+			<action class="Delay">
+				<property name="time" value="5" />
+				<property name="phase" value="2" />
+			</action>
 
-		<!-- First WAVE ~  ~  ~ happens where event was started -->
-		<action class="SpawnEntity">
-			<property name="phase" value="3" />
-			<property name="min_distance" value="6" />
-			<property name="max_distance" value="12" />
-			<property name="entity_names" value="zombieArlene,zombieMarlene,zombiePartyGirl,zombieNurse,zombieMoe" param1="zombiename" />
-			<property name="add_to_group" value="badGuys" />
-			<property name="spawn_count" value="5" />
-			<property name="party_addition" value="1" />
-		</action>
+			<!-- First WAVE ~  ~  ~ happens where event was started -->
+			<action class="SpawnEntity">
+				<property name="phase" value="3" />
+				<property name="min_distance" value="6" />
+				<property name="max_distance" value="12" />
+				<property name="entity_names" value="zombieArlene,zombieMarlene,zombiePartyGirl,zombieNurse,zombieMoe" param1="zombiename" />
+				<property name="add_to_group" value="badGuys" />
+				<property name="spawn_count" value="5" />
+				<property name="party_addition" value="1" />
+			</action>
 
-		<!-- Wait until all zombies from wave 1 are dead -->
-		<action class="WaitForDead">
-			<property name="target_group" value="badGuys" />
-			<property name="phase_on_despawn" value="16" /><!-- will be changed later to last phase -->
-			<property name="phase" value="4" />
-			<property name="kill" value="animalBigWolfFriend" param1="zombiename"/>
-		</action>
+			<!-- Wait until all zombies from wave 1 are dead -->
+			<action class="WaitForDead">
+				<property name="target_group" value="badGuys" />
+				<property name="phase_on_despawn" value="16" /><!-- will be changed later to last phase -->
+				<property name="phase" value="4" />
+				<property name="kill" value="animalBigWolfFriend" param1="zombiename"/>
+			</action>
 
-		<!-- Make em think they won -->
-		<action class="PlaySound">
-			<property name="sound" value="twitch_vote_horde_success" />
-			<property name="phase" value="5" />
-			<property name="inside_head" value="true" />
-			<property name="target_group" value="party" />
-		</action>
+			<!-- Make em think they won -->
+			<action class="PlaySound">
+				<property name="sound" value="twitch_vote_horde_success" />
+				<property name="phase" value="5" />
+				<property name="inside_head" value="true" />
+				<property name="target_group" value="party" />
+			</action>
 
-		<!-- Wait A Damn Second -->
-		<action class="Delay">
-			<property name="time" value="10" />
-			<property name="phase" value="5" />
-		</action>
+			<!-- Wait A Damn Second -->
+			<action class="Delay">
+				<property name="time" value="10" />
+				<property name="phase" value="5" />
+			</action>
 
-		<!-- Bye Felecia -->
-		<action class="RandomTeleport">
-			<property name="target_group" value="goodGuys" />
-			<property name="min_distance" value="200" /><!-- will be changed later to last phase -->
-			<property name="max_distance" value="250" />
-			<property name="phase" value="6" />
-		</action>
+			<!-- Bye Felecia -->
+			<action class="RandomTeleport">
+				<property name="target_group" value="goodGuys" />
+				<property name="min_distance" value="200" /><!-- will be changed later to last phase -->
+				<property name="max_distance" value="250" />
+				<property name="phase" value="6" />
+			</action>
 
-		<!-- Wait A Damn Second -->
-		<action class="Delay">
-			<property name="time" value="3" />
-			<property name="phase" value="6" />
-		</action>
+			<!-- Wait A Damn Second -->
+			<action class="Delay">
+				<property name="time" value="3" />
+				<property name="phase" value="6" />
+			</action>
 
-		<!-- Spawn fresh wolves -->
-		<action class="SpawnEntity">
-			<property name="phase" value="7" />
-			<property name="min_distance" value="8" />
-			<property name="max_distance" value="12" />
-			<property name="entity_names" value="animalBigWolfFriend" param1="zombiename" />
-			<property name="add_to_group" value="goodGuys" />
-			<property name="spawn_count" value="2" />
-			<property name="party_addition" value="1" />
-		</action>
+			<!-- Spawn fresh wolves -->
+			<action class="SpawnEntity">
+				<property name="phase" value="7" />
+				<property name="min_distance" value="8" />
+				<property name="max_distance" value="12" />
+				<property name="entity_names" value="animalBigWolfFriend" param1="zombiename" />
+				<property name="add_to_group" value="goodGuys" />
+				<property name="spawn_count" value="2" />
+				<property name="party_addition" value="1" />
+			</action>
 
-		<action class="Delay">
-			<property name="time" value="5" />
-			<property name="phase" value="7" />
-		</action>
+			<action class="Delay">
+				<property name="time" value="5" />
+				<property name="phase" value="7" />
+			</action>
 
-		<!-- Wave 2 ~ ~ ~ ~ Lil harder - ferals and cops, soldiers, consists of 2 spawn waves -->
-		<action class="SpawnEntity">
-			<property name="phase" value="8" />
-			<property name="min_distance" value="6" />
-			<property name="max_distance" value="12" />
-			<property name="entity_names" value="zombieArlene,zombieMarlene,zombiePartyGirl,zombieSteveFeral,
-				zombieNurse,zombieJoeFeral,zombieMoe,zombieSoldierFeral,zombieSteveCrawler,zombieFatCop,zombieSoldier,
-				zombieFatHawaiian,zombieFatHawaiianFeral" param1="zombiename" />
-			<property name="add_to_group" value="badGuys" />
-			<property name="spawn_count" value="10" />
-			<property name="party_addition" value="1" />
-		</action>
+			<!-- Wave 2 ~ ~ ~ ~ Lil harder - ferals and cops, soldiers, consists of 2 spawn waves -->
+			<action class="SpawnEntity">
+				<property name="phase" value="8" />
+				<property name="min_distance" value="6" />
+				<property name="max_distance" value="12" />
+				<property name="entity_names" value="zombieArlene,zombieMarlene,zombiePartyGirl,zombieSteveFeral,
+					zombieNurse,zombieJoeFeral,zombieMoe,zombieSoldierFeral,zombieSteveCrawler,zombieFatCop,zombieSoldier,
+					zombieFatHawaiian,zombieFatHawaiianFeral" param1="zombiename" />
+				<property name="add_to_group" value="badGuys" />
+				<property name="spawn_count" value="10" />
+				<property name="party_addition" value="1" />
+			</action>
 
-		<action class="Delay">
-			<property name="time" value="10" />
-			<property name="phase" value="8" />
-		</action>
+			<action class="Delay">
+				<property name="time" value="10" />
+				<property name="phase" value="8" />
+			</action>
 
-		<action class="SpawnEntity">
-			<property name="phase" value="9" />
-			<property name="min_distance" value="6" />
-			<property name="max_distance" value="12" />
-			<property name="entity_names" value="zombieArlene,zombieMarlene,zombiePartyGirl,zombieSteveFeral,
-				zombieNurse,zombieJoeFeral,zombieMoe,zombieSoldierFeral,zombieSteveCrawler,zombieFatCop,zombieSoldier,
-				zombieFatHawaiian,zombieFatHawaiianFeral" param1="zombiename" />
-			<property name="add_to_group" value="badGuys" />
-			<property name="spawn_count" value="10" />
-			<property name="party_addition" value="1" />
-		</action>
+			<action class="SpawnEntity">
+				<property name="phase" value="9" />
+				<property name="min_distance" value="6" />
+				<property name="max_distance" value="12" />
+				<property name="entity_names" value="zombieArlene,zombieMarlene,zombiePartyGirl,zombieSteveFeral,
+					zombieNurse,zombieJoeFeral,zombieMoe,zombieSoldierFeral,zombieSteveCrawler,zombieFatCop,zombieSoldier,
+					zombieFatHawaiian,zombieFatHawaiianFeral" param1="zombiename" />
+				<property name="add_to_group" value="badGuys" />
+				<property name="spawn_count" value="10" />
+				<property name="party_addition" value="1" />
+			</action>
 
-		<action class="WaitForDead">
-			<property name="target_group" value="badGuys" />
-			<property name="phase_on_despawn" value="16" /><!-- will be changed later to last phase -->
-			<property name="phase" value="10" />
-			<property name="kill" value="animalBigWolfFriend" param1="zombiename"/>
-		</action>
+			<action class="WaitForDead">
+				<property name="target_group" value="badGuys" />
+				<property name="phase_on_despawn" value="16" /><!-- will be changed later to last phase -->
+				<property name="phase" value="10" />
+				<property name="kill" value="animalBigWolfFriend" param1="zombiename"/>
+			</action>
 
-		<action class="PlaySound">
-			<property name="sound" value="twitch_vote_horde_success" />
-			<property name="phase" value="11" />
-			<property name="inside_head" value="true" />
-			<property name="target_group" value="party" />
-		</action>
+			<action class="PlaySound">
+				<property name="sound" value="twitch_vote_horde_success" />
+				<property name="phase" value="11" />
+				<property name="inside_head" value="true" />
+				<property name="target_group" value="party" />
+			</action>
 
-		<action class="PlaySound">
-			<property name="sound" value="open_supply_crate" />
-			<property name="phase" value="12" />
-		</action>
+			<action class="PlaySound">
+				<property name="sound" value="open_supply_crate" />
+				<property name="phase" value="12" />
+			</action>
 
-		<action class="SpawnContainer">
-			<property name="phase" value="13" />
-			<property name="target_group" value="goodGuys" />
-			<property name="entity_names" value="TwitchAction_SupplyWeapon3,TwitchAction_SupplyWeapon4,
-			    TwitchAction_SupplyMedicine3,TwitchAction_SupplyAmmo3,TwitchAction_SupplyAmmo4" param1="cratename" />
-			<property name="spawn_count" value="5" param1="spawncount" />
-			<property name="min_distance" value="5" />
-			<property name="max_distance" value="10" />
-			<property name="safe_spawn" value="true" />
-			<property name="spawn_from_position" value="true" />
+			<action class="SpawnContainer">
+				<property name="phase" value="13" />
+				<property name="target_group" value="goodGuys" />
+				<property name="entity_names" value="TwitchAction_SupplyWeapon3,TwitchAction_SupplyWeapon4,
+					TwitchAction_SupplyMedicine3,TwitchAction_SupplyAmmo3,TwitchAction_SupplyAmmo4" param1="cratename" />
+				<property name="spawn_count" value="5" param1="spawncount" />
+				<property name="min_distance" value="5" />
+				<property name="max_distance" value="10" />
+				<property name="safe_spawn" value="true" />
+				<property name="spawn_from_position" value="true" />
 
-		</action>
+			</action>
 
-		<!-- Give Them Time To Get The Crates -->
-		<action class="Delay">
-			<property name="time" value="20" />
-			<property name="phase" value="13" />
-		</action>
+			<!-- Give Them Time To Get The Crates -->
+			<action class="Delay">
+				<property name="time" value="20" />
+				<property name="phase" value="13" />
+			</action>
 
-		<!-- Bye Again Felecia -->
-		<action class="RandomTeleport">
-			<property name="target_group" value="goodGuys" />
-			<property name="min_distance" value="800" /><!-- will be changed later to last phase -->
-			<property name="max_distance" value="1000" />
-			<property name="phase" value="14" />
-		</action>
+			<!-- Bye Again Felecia -->
+			<action class="RandomTeleport">
+				<property name="target_group" value="goodGuys" />
+				<property name="min_distance" value="800" /><!-- will be changed later to last phase -->
+				<property name="max_distance" value="1000" />
+				<property name="phase" value="14" />
+			</action>
 
-		<!-- Give Them Time To Get The Crates -->
-		<action class="Delay">
-			<property name="time" value="20" />
-			<property name="phase" value="13" />
-		</action>
+			<!-- Give Them Time To Get The Crates -->
+			<action class="Delay">
+				<property name="time" value="20" />
+				<property name="phase" value="13" />
+			</action>
 
-		<!-- Alert so that they know it's coming -->
-		<action class="PlaySound">
-			<property name="sound" value="hulkalert, bearalert, boaralert" />
-			<property name="phase" value="13" />
-		</action>
+			<!-- Alert so that they know it's coming -->
+			<action class="PlaySound">
+				<property name="sound" value="hulkalert, bearalert, boaralert" />
+				<property name="phase" value="13" />
+			</action>
 
-		<!-- Spawn friendly BEAR and Grace -->
-		<action class="SpawnEntity">
-			<property name="phase" value="15" />
-			<property name="min_distance" value="8" />
-			<property name="max_distance" value="12" />
-			<property name="entity_names" value="animalDeadBearFriend, animalBossGraceFriend" param1="zombiename" />
-			<property name="add_to_group" value="goodGuys" />
-			<property name="spawn_count" value="2" />
-			<property name="party_addition" value="1" />
-		</action>
+			<!-- Spawn friendly BEAR and Grace -->
+			<action class="SpawnEntity">
+				<property name="phase" value="15" />
+				<property name="min_distance" value="8" />
+				<property name="max_distance" value="12" />
+				<property name="entity_names" value="animalDeadBearFriend, animalBossGraceFriend" param1="zombiename" />
+				<property name="add_to_group" value="goodGuys" />
+				<property name="spawn_count" value="2" />
+				<property name="party_addition" value="1" />
+			</action>
 
-		<!-- Boss Wave Next -->
+			<!-- Boss Wave Next -->
 
-		<!-- last phase - Failure -->
-		<action class="PlaySound">
-			<property name="sound" value="twitch_vote_horde_failed" />
-			<property name="phase" value="16" />
-			<property name="inside_head" value="true" />
-			<property name="target_group" value="party" />
-		</action>
-	</action_sequence>
+			<!-- last phase - Failure -->
+			<action class="PlaySound">
+				<property name="sound" value="twitch_vote_horde_failed" />
+				<property name="phase" value="16" />
+				<property name="inside_head" value="true" />
+				<property name="target_group" value="party" />
+			</action>
+		</action_sequence>
+		<!-- Fkn FIN -->
     </append>
 </config>
