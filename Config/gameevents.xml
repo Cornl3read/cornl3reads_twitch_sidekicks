@@ -16,9 +16,12 @@
 	<action_sequence name="spawn_deadsidekick" template="spawn_single">
 		<variable name="zombiename" value="animalDeadBearFriend" />
 		<variable name="alertsound" value="bearalert" />
-
 	</action_sequence>
 
+	<action_sequence name="spawn_superfriend" template="spawn_single">
+		<variable name="zombiename" value="animalBossGraceFriend" />
+		<variable name="alertsound" value="boaralert" />
+	</action_sequence>
 
 
 		<!-- Begin Thunderdome -->

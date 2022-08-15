@@ -8,9 +8,13 @@ TwitchAction_SpawnBigWolfFriendCommand,#spawn_bigsidekick
 TwitchAction_SpawnBigWolfFriend,spawn_bigsidekick
 TwitchAction_SpawnBigWolfFriendDesc,Spawns a big sidekick.
 
-TwitchAction_SpawnDeadBearFriendCommand,#supply_mystery
+TwitchAction_SpawnDeadBearFriendCommand,#spawn_deadsidekick
 TwitchAction_SpawnDeadBearFriend, spawn_deadsidekick
 TwitchAction_SpawnDeadBearFriendDesc,Spawns a dead sidekick.
+
+TwitchAction_SpawnSuperFriendCommand,#spawn_superfriend
+TwitchAction_SpawnDeadBearFriend, spawn_superfriend
+TwitchAction_SpawnDeadBearFriendDesc,Spawns a super sidekick.
 
 TwitchAction_ThunderdomeCommand,#spawn_thunderdome
 TwitchAction_Thunderdome, thunderdome

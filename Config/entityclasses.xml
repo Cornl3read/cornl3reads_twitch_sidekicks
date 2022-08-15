@@ -5,30 +5,35 @@
             <!-- Stealth -->
             <property name="SmellAlertThreshold" value="8"/>
             <effect_group name="Base Effects">
-                <passive_effect name="HealthMax" operation="base_set" value="500"/>
+                <passive_effect name="HealthMax" operation="base_set" value="2500"/>
             </effect_group>
             <property name="NavObject" value="twitch_spawn,twitch_spawn_other,animaltracking_wolf,clear_sleeper" />
         </entity_class>
 
         <entity_class name="animalBigWolfFriend" extends="animalDireWolf">
-
             <property name="AITask-3" value="ApproachAndAttackTarget" data="class=EntityZombie,20"/>
-
             <effect_group name="Base Effects">
                 <passive_effect name="HealthMax" operation="base_set" value="5000"/>
             </effect_group>
-
             <property name="NavObject" value="twitch_spawn,twitch_spawn_other,animaltracking_direwolf,clear_sleeper" />
         </entity_class>
 
         <entity_class name="animalDeadBearFriend" extends="animalZombieBear">
             <property name="Tags" value="entity,animal,zombie,hostile,bear"/>
-
             <property name="AITask-5" value="ApproachAndAttackTarget" data="class=EntityZombie,20"/>
-
             <!-- Gameplay  -->
             <property name="HandItem" value="meleeHandAnimalZombieBear"/>
+            <effect_group name="Base Effects">
+                <passive_effect name="HealthMax" operation="base_set" value="10000"/>
+            </effect_group>
+        </entity_class>
 
+        <entity_class name="animalBossGraceFriend" extends="animalBossGrace">
+            <property name="Tags" value="entity,animal,zombie,hostile,boar"/>
+            <property name="AITask-4" value="ApproachAndAttackTarget" data="class=EntityZombie,10"/>
+            <property name="AITarget-4" value="SetNearestEntityAsTarget" data="class=EntityZombie,0,3,EntityPlayer,0,0"/>
+            <!-- Gameplay  -->
+            <property name="HandItem" value="meleeHandAnimalZombieBear"/>
             <effect_group name="Base Effects">
                 <passive_effect name="HealthMax" operation="base_set" value="10000"/>
             </effect_group>
