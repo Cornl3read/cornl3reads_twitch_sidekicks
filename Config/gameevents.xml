@@ -86,7 +86,7 @@
 		<!-- Wait until all zombies from wave 1 are dead -->
 		<action class="WaitForDead">
 			<property name="target_group" value="badGuys" />
-			<property name="phase_on_despawn" value="6" /><!-- will be changed later to last phase -->
+			<property name="phase_on_despawn" value="16" /><!-- will be changed later to last phase -->
 			<property name="phase" value="4" />
 			<property name="kill" value="animalBigWolfFriend" param1="zombiename"/>
 		</action>
@@ -94,7 +94,7 @@
 		<!-- Make em think they won -->
 		<action class="PlaySound">
 			<property name="sound" value="twitch_vote_horde_success" />
-			<property name="phase" value="11" />
+			<property name="phase" value="5" />
 			<property name="inside_head" value="true" />
 			<property name="target_group" value="party" />
 		</action>
@@ -167,7 +167,7 @@
 
 		<action class="WaitForDead">
 			<property name="target_group" value="badGuys" />
-			<property name="phase_on_despawn" value="12" /><!-- will be changed later to last phase -->
+			<property name="phase_on_despawn" value="16" /><!-- will be changed later to last phase -->
 			<property name="phase" value="10" />
 			<property name="kill" value="animalBigWolfFriend" param1="zombiename"/>
 		</action>
@@ -181,11 +181,11 @@
 
 		<action class="PlaySound">
 			<property name="sound" value="open_supply_crate" />
-			<property name="phase" value="8" />
+			<property name="phase" value="12" />
 		</action>
 
 		<action class="SpawnContainer">
-			<property name="phase" value="12" />
+			<property name="phase" value="13" />
 			<property name="entity_names" value="TwitchAction_SupplyWeapon3,TwitchAction_SupplyWeapon4,
 			    TwitchAction_SupplyMedicine3,TwitchAction_SupplyAmmo3,TwitchAction_SupplyAmmo4" param1="cratename" />
 			<property name="spawn_count" value="5" param1="spawncount" />
@@ -198,7 +198,7 @@
 		<!-- Give Them Time To Get The Crates -->
 		<action class="Delay">
 			<property name="time" value="20" />
-			<property name="phase" value="12" />
+			<property name="phase" value="13" />
 		</action>
 
 		<!-- Bye Again Felecia -->
@@ -206,37 +206,41 @@
 			<property name="target_group" value="goodGuys" />
 			<property name="min_distance" value="800" /><!-- will be changed later to last phase -->
 			<property name="max_distance" value="1000" />
+			<property name="phase" value="14" />
+		</action>
+
+		<!-- Give Them Time To Get The Crates -->
+		<action class="Delay">
+			<property name="time" value="20" />
 			<property name="phase" value="13" />
 		</action>
 
+		<!-- Alert so that they know it's coming -->
+		<action class="PlaySound">
+			<property name="sound" value="hulkalert, bearalert, boaralert" />
+			<property name="phase" value="13" />
+		</action>
 
+		<!-- Spawn friendly BEAR and Grace -->
+		<action class="SpawnEntity">
+			<property name="phase" value="15" />
+			<property name="min_distance" value="8" />
+			<property name="max_distance" value="12" />
+			<property name="entity_names" value="animalDeadBearFriend, animalBossGraceFriend" param1="zombiename" />
+			<property name="add_to_group" value="goodGuys" />
+			<property name="spawn_count" value="2" />
+			<property name="party_addition" value="1" />
+		</action>
 
 		<!-- Boss Wave Next -->
 
-		<!-- to do
-			Teleport group to POI - Thunderdome(need this!)
-					RandomTeleport - Randomly teleports the target/target_group.
-					min_distance - minimum distance they can teleport.
-					max_distance - maximum distance they can teleport.
-
-					TeleportToSpecial - teleports the target to special location. (Only works for players.)
-					special_type - this can be Bedroll, Landclaim, or Backpack
-
-	        spawn a few weak zombies outside in a diff group "Lurkers" to bang stuff for ambiance :)
-			check if animalDireWolfFriend x2 still alive and spawn replacements
-				NearbyEntities - Check if the Target has nearby entities.
-					entity_tags - The entity tags of the nearby entities. (If no tag is supplied, defaults to any enemies or animals)
-					max_distance - The maximum distance to check for nearby entities.
-					target_is_owner - If the vehicle/turret is owned by the target.
-			spawn a weapon and ammo crate t2 for each player
-			sort group and spawn next zombie wave inside of dome with players
-			add to group
-			Rinse and repeat with meds as the crates or food
-			waves intensify and animal friend eventually becomes a zombie bear
-			then.... Epic Finale. You gonna die now
-		-->
-
-
+		<!-- last phase - Failure -->
+		<action class="PlaySound">
+			<property name="sound" value="twitch_vote_horde_failed" />
+			<property name="phase" value="16" />
+			<property name="inside_head" value="true" />
+			<property name="target_group" value="party" />
+		</action>
 	</action_sequence>
     </append>
 </config>
