@@ -186,6 +186,7 @@
 
 		<action class="SpawnContainer">
 			<property name="phase" value="13" />
+			<property name="target_group" value="goodGuys" />
 			<property name="entity_names" value="TwitchAction_SupplyWeapon3,TwitchAction_SupplyWeapon4,
 			    TwitchAction_SupplyMedicine3,TwitchAction_SupplyAmmo3,TwitchAction_SupplyAmmo4" param1="cratename" />
 			<property name="spawn_count" value="5" param1="spawncount" />
