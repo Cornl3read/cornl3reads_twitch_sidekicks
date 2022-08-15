@@ -5,26 +5,26 @@
 	<action_sequence name="spawn_sidekick" template="spawn_single">
 		<variable name="zombiename" value="animalWolfFriend" />
 		<variable name="alertsound" value="wolfalert" />
-		<variable name="gamestage" value="5" />
+		<variable name="gamestage" value="1" />
 	</action_sequence>
 
 	<action_sequence name="spawn_bigsidekick" template="spawn_single">
 		<variable name="zombiename" value="animalBigWolfFriend" />
 		<variable name="alertsound" value="wolfalert" />
-		<variable name="gamestage" value="5" />
+		<variable name="gamestage" value="1" />
 	</action_sequence>
 
 	<action_sequence name="spawn_deadsidekick" template="spawn_single">
 		<variable name="zombiename" value="animalDeadBearFriend" />
 		<variable name="alertsound" value="bearalert" />
-		<variable name="gamestage" value="5" />
+		<variable name="gamestage" value="1" />
 	</action_sequence>
 
 
 
 		<!-- Begin Thunderdome -->
 	<action_sequence name="#thunderdome">
-		<variable name="gamestage" value="5" />
+		<variable name="gamestage" value="1" />
 		<property name="refund_inactivity" value="false"/>
 		<property name="category" value="twitch_actions"/>
 
@@ -85,12 +85,12 @@
 			<property name="phase" value="4" />
 		</action>
 
-		<!-- Kill the sidekicks before the teleport so that they can be spawned fresh for next wave -->
+		<!-- Kill the sidekicks before the teleport so that they can be spawned fresh for next wave
 		<action class="kill">
 			<property name="phase" value="5" />
 			<property name="entity_names" value="animalBigWolfFriend" param1="zombiename" />
 			<property name="max_distance" value="20" />
-		</action>
+		</action> -->
 
 		<!-- Wait A Damn Second -->
 		<action class="Delay">

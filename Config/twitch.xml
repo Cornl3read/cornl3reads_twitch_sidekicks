@@ -6,7 +6,7 @@
 			<property name="command_key" value="TwitchAction_SpawnWolfFriendCommand" />
 			<property name="title_key" value="TwitchAction_SpawnWolfFriend" />
 			<property name="description_key" value="TwitchAction_SpawnWolfFriendDesc" />
-			<property name="start_gamestage" value="35" />
+			<property name="start_gamestage" value="1" />
 			<property name="event_name" value="spawn_sidekick" />
 			<property name="default_cost" value="200" />
 			<property name="cooldown" value="120" />
@@ -18,7 +18,7 @@
 			<property name="command_key" value="TwitchAction_SpawnBigWolfFriendCommand" />
 			<property name="title_key" value="TwitchAction_SpawnWolfFriend" />
 			<property name="description_key" value="TwitchAction_SpawnBigWolfFriendDesc" />
-			<property name="start_gamestage" value="70" />
+			<property name="start_gamestage" value="1" />
 			<property name="event_name" value="spawn_bigsidekick" />
 			<property name="default_cost" value="350" />
 			<property name="cooldown" value="120" />
@@ -30,7 +30,7 @@
 			<property name="command_key" value="TwitchAction_SpawnDeadBearFriendCommand" />
 			<property name="title_key" value="TwitchAction_SpawnDeadBearFriend" />
 			<property name="description_key" value="TwitchAction_SpawnDeadBearFriendDesc" />
-			<property name="start_gamestage" value="120" />
+			<property name="start_gamestage" value="1" />
 			<property name="event_name" value="spawn_deadsidekick" />
 			<property name="default_cost" value="500" />
 			<property name="cooldown" value="120" />
@@ -39,7 +39,7 @@
 
 		<action name="twitch_thunderdome">
 			<property name="command" value="#enter_thunderdome" />
-			<property name="start_gamestage" value="120" />
+			<property name="start_gamestage" value="1" />
 			<property name="event_name" value="thunderdome" />
 			<property name="default_cost" value="1000" />
 			<property name="cooldown" value="120" />
