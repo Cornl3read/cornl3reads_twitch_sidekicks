@@ -72,7 +72,7 @@
 			<property name="phase" value="3" />
 			<property name="min_distance" value="6" />
 			<property name="max_distance" value="12" />
-			<property name="entity_names" value="zombieArlene,zombieMarlene,zombiePartyGirl,zombieNurse,zombieYo" param1="zombiename" />
+			<property name="entity_names" value="zombieArlene,zombieMarlene,zombiePartyGirl,zombieNurse,zombieMoe" param1="zombiename" />
 			<property name="add_to_group" value="badGuys" />
 			<property name="spawn_count" value="20" />
 			<property name="party_addition" value="1" />
@@ -134,7 +134,7 @@
 			<property name="min_distance" value="6" />
 			<property name="max_distance" value="12" />
 			<property name="entity_names" value="zombieArlene,zombieMarlene,zombiePartyGirl,zombieSteveFeral,
-				zombieNurse,zombieJoeFeral,zombieYo,zombieSoldierFeral,zombieSteveCrawler,zombieFatCop,zombieSoldier,
+				zombieNurse,zombieJoeFeral,zombieMoe,zombieSoldierFeral,zombieSteveCrawler,zombieFatCop,zombieSoldier,
 				zombieFatHawaiian,zombieFatHawaiianFeral" param1="zombiename" />
 			<property name="add_to_group" value="badGuys" />
 			<property name="spawn_count" value="40" />
