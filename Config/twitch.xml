@@ -37,5 +37,13 @@
 			<property name="enabled" value="true" />
 		</action>
 
+		<action name="twitch_thunderdome">
+			<property name="command" value="#enter_thunderdome" />
+			<property name="start_gamestage" value="120" />
+			<property name="event_name" value="thunderdome" />
+			<property name="default_cost" value="1000" />
+			<property name="cooldown" value="120" />
+			<property name="enabled" value="true" />
+		</action>
     </append>
 </config>
