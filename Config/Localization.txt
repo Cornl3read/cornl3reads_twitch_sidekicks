@@ -1,0 +1,17 @@
+Key,english
+
+TwitchAction_SpawnWolfFriendCommand,#spawn_sidekick
+TwitchAction_TwitchAction_SpawnWolfFriend,spawn_sidekick
+TwitchAction_SpawnWolfFriendDesc,Spawns a sidekick.
+
+TwitchAction_BigWolfFriendCommand,#spawn_bigsidekick
+TwitchAction_BigWolfFriend,spawn_bigsidekick
+TwitchAction_BigWolfFriendDesc,Spawns a big sidekick.
+
+TwitchAction_SpawnDeadBearFriendCommand,#supply_mystery
+TwitchAction_SpawnDeadBearFriend, spawn_deadsidekick
+TwitchAction_SpawnDeadBearFriendDesc,Spawns a dead sidekick.
+
+TwitchAction_ThunderdomeCommand, #thunderdome
+TwitchAction_Thunderdome, thunderdome
+TwitchAction_Thunderdome, Thunderdome with friends.
