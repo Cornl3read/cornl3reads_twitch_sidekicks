@@ -87,9 +87,17 @@
 			<property name="kill" value="animalBigWolfFriend" param1="zombiename"/>
 		</action>
 
+		<!-- Make em think they won -->
+		<action class="PlaySound">
+			<property name="sound" value="twitch_vote_horde_success" />
+			<property name="phase" value="11" />
+			<property name="inside_head" value="true" />
+			<property name="target_group" value="party" />
+		</action>
+
 		<!-- Wait A Damn Second -->
 		<action class="Delay">
-			<property name="time" value="20" />
+			<property name="time" value="10" />
 			<property name="phase" value="5" />
 		</action>
 
@@ -160,6 +168,44 @@
 			<property name="kill" value="animalBigWolfFriend" param1="zombiename"/>
 		</action>
 
+		<action class="PlaySound">
+			<property name="sound" value="twitch_vote_horde_success" />
+			<property name="phase" value="11" />
+			<property name="inside_head" value="true" />
+			<property name="target_group" value="party" />
+		</action>
+
+		<action class="PlaySound">
+			<property name="sound" value="open_supply_crate" />
+			<property name="phase" value="8" />
+		</action>
+
+		<action class="SpawnContainer">
+			<property name="phase" value="12" />
+			<property name="entity_names" value="TwitchAction_SupplyWeapon3,TwitchAction_SupplyWeapon4,
+			    TwitchAction_SupplyMedicine3,TwitchAction_SupplyAmmo3,TwitchAction_SupplyAmmo4" param1="cratename" />
+			<property name="spawn_count" value="5" param1="spawncount" />
+			<property name="min_distance" value="5" />
+			<property name="max_distance" value="10" />
+			<property name="safe_spawn" value="true" />
+			<property name="spawn_from_position" value="true" />
+		</action>
+
+		<!-- Give Them Time To Get The Crates -->
+		<action class="Delay">
+			<property name="time" value="20" />
+			<property name="phase" value="12" />
+		</action>
+
+		<!-- Bye Again Felecia -->
+		<action class="RandomTeleport">
+			<property name="target_group" value="goodGuys" />
+			<property name="min_distance" value="800" /><!-- will be changed later to last phase -->
+			<property name="max_distance" value="1000" />
+			<property name="phase" value="13" />
+		</action>
+
+		<!-- Boss Wave Next -->
 
 		<!-- to do
 			Teleport group to POI - Thunderdome(need this!)
