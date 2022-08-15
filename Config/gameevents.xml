@@ -1,30 +1,31 @@
 <config>
-	<set xpath="/gameevents/@max_entities">100</set>
+	<set xpath="/gameevents/@max_entities">64</set>
 	<append xpath="/gameevents">
 
 	<action_sequence name="spawn_sidekick" template="spawn_single">
 		<variable name="zombiename" value="animalWolfFriend" />
 		<variable name="alertsound" value="wolfalert" />
-		<variable name="gamestage" value="1" />
 	</action_sequence>
 
 	<action_sequence name="spawn_bigsidekick" template="spawn_single">
 		<variable name="zombiename" value="animalBigWolfFriend" />
 		<variable name="alertsound" value="wolfalert" />
-		<variable name="gamestage" value="1" />
-	</action_sequence>
 
+	</action_sequence>
+<!-- <variable name="gamestage" value="1" /> -->
 	<action_sequence name="spawn_deadsidekick" template="spawn_single">
 		<variable name="zombiename" value="animalDeadBearFriend" />
 		<variable name="alertsound" value="bearalert" />
-		<variable name="gamestage" value="1" />
+	</action_sequence>
+
+	<action_sequence name="spawn_superfriend" template="spawn_single">
+		<variable name="zombiename" value="animalBossGraceFriend" />
+		<variable name="alertsound" value="boaralert" />
 	</action_sequence>
 
 
-
 		<!-- Begin Thunderdome -->
-	<action_sequence name="#thunderdome">
-		<variable name="gamestage" value="1" />
+	<action_sequence name="thunderdome">
 		<property name="refund_inactivity" value="false"/>
 		<property name="category" value="twitch_actions"/>
 
@@ -72,9 +73,9 @@
 			<property name="phase" value="3" />
 			<property name="min_distance" value="6" />
 			<property name="max_distance" value="12" />
-			<property name="entity_names" value="zombieArlene,zombieMarlene,zombiePartyGirl,zombieNurse,zombieYo" param1="zombiename" />
+			<property name="entity_names" value="zombieArlene,zombieMarlene,zombiePartyGirl,zombieNurse,zombieMoe" param1="zombiename" />
 			<property name="add_to_group" value="badGuys" />
-			<property name="spawn_count" value="20" />
+			<property name="spawn_count" value="5" />
 			<property name="party_addition" value="1" />
 		</action>
 
@@ -83,6 +84,7 @@
 			<property name="target_group" value="badGuys" />
 			<property name="phase_on_despawn" value="6" /><!-- will be changed later to last phase -->
 			<property name="phase" value="4" />
+			<property name="kill" value="animalBigWolfFriend" param1="zombiename"/>
 		</action>
 
 		<!-- Kill the sidekicks before the teleport so that they can be spawned fresh for next wave
@@ -92,17 +94,17 @@
 			<property name="max_distance" value="20" />
 		</action> -->
 
-		<!-- Wait A Damn Second -->
+		<!-- Wait A Damn Second
 		<action class="Delay">
 			<property name="time" value="20" />
 			<property name="phase" value="5" />
 		</action>
-
+-->
 		<!-- Bye Felecia -->
 		<action class="RandomTeleport">
 			<property name="target_group" value="goodGuys" />
-			<property name="min_distance" value="25" /><!-- will be changed later to last phase -->
-			<property name="max_distance" value="150" />
+			<property name="min_distance" value="200" /><!-- will be changed later to last phase -->
+			<property name="max_distance" value="250" />
 			<property name="phase" value="6" />
 		</action>
 
@@ -134,10 +136,10 @@
 			<property name="min_distance" value="6" />
 			<property name="max_distance" value="12" />
 			<property name="entity_names" value="zombieArlene,zombieMarlene,zombiePartyGirl,zombieSteveFeral,
-				zombieNurse,zombieJoeFeral,zombieYo,zombieSoldierFeral,zombieSteveCrawler,zombieFatCop,zombieSoldier,
+				zombieNurse,zombieJoeFeral,zombieMoe,zombieSoldierFeral,zombieSteveCrawler,zombieFatCop,zombieSoldier,
 				zombieFatHawaiian,zombieFatHawaiianFeral" param1="zombiename" />
 			<property name="add_to_group" value="badGuys" />
-			<property name="spawn_count" value="40" />
+			<property name="spawn_count" value="1" />
 			<property name="party_addition" value="1" />
 		</action>
 
