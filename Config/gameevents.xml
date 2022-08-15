@@ -72,7 +72,7 @@
 			<property name="max_distance" value="12" />
 			<property name="entity_names" value="zombieArlene,zombieMarlene,zombiePartyGirl,zombieNurse,zombieMoe" param1="zombiename" />
 			<property name="add_to_group" value="badGuys" />
-			<property name="spawn_count" value="20" />
+			<property name="spawn_count" value="5" />
 			<property name="party_addition" value="1" />
 		</action>
 
@@ -81,6 +81,7 @@
 			<property name="target_group" value="badGuys" />
 			<property name="phase_on_despawn" value="6" /><!-- will be changed later to last phase -->
 			<property name="phase" value="4" />
+			<property name="kill" value="animalBigWolfFriend" param1="zombiename"/>
 		</action>
 
 		<!-- Kill the sidekicks before the teleport so that they can be spawned fresh for next wave
@@ -99,8 +100,8 @@
 		<!-- Bye Felecia -->
 		<action class="RandomTeleport">
 			<property name="target_group" value="goodGuys" />
-			<property name="min_distance" value="25" /><!-- will be changed later to last phase -->
-			<property name="max_distance" value="150" />
+			<property name="min_distance" value="200" /><!-- will be changed later to last phase -->
+			<property name="max_distance" value="250" />
 			<property name="phase" value="6" />
 		</action>
 
@@ -135,7 +136,7 @@
 				zombieNurse,zombieJoeFeral,zombieMoe,zombieSoldierFeral,zombieSteveCrawler,zombieFatCop,zombieSoldier,
 				zombieFatHawaiian,zombieFatHawaiianFeral" param1="zombiename" />
 			<property name="add_to_group" value="badGuys" />
-			<property name="spawn_count" value="40" />
+			<property name="spawn_count" value="1" />
 			<property name="party_addition" value="1" />
 		</action>
 

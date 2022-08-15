@@ -12,6 +12,6 @@ TwitchAction_SpawnDeadBearFriendCommand,#supply_mystery
 TwitchAction_SpawnDeadBearFriend, spawn_deadsidekick
 TwitchAction_SpawnDeadBearFriendDesc,Spawns a dead sidekick.
 
-TwitchAction_ThunderdomeCommand, #thunderdome
+TwitchAction_ThunderdomeCommand,#spawn_thunderdome
 TwitchAction_Thunderdome, thunderdome
 TwitchAction_Thunderdome, Thunderdome with friends.
