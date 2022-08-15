@@ -25,7 +25,7 @@
 
 
 		<!-- Begin Thunderdome -->
-	<action_sequence name="#thunderdome">
+	<action_sequence name="thunderdome">
 		<property name="refund_inactivity" value="false"/>
 		<property name="category" value="twitch_actions"/>
 
