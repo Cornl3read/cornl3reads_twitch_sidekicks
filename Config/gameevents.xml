@@ -1,30 +1,28 @@
 <config>
-	<set xpath="/gameevents/@max_entities">100</set>
+	<set xpath="/gameevents/@max_entities">64</set>
 	<append xpath="/gameevents">
 
 	<action_sequence name="spawn_sidekick" template="spawn_single">
 		<variable name="zombiename" value="animalWolfFriend" />
 		<variable name="alertsound" value="wolfalert" />
-		<variable name="gamestage" value="1" />
 	</action_sequence>
 
 	<action_sequence name="spawn_bigsidekick" template="spawn_single">
 		<variable name="zombiename" value="animalBigWolfFriend" />
 		<variable name="alertsound" value="wolfalert" />
-		<variable name="gamestage" value="1" />
-	</action_sequence>
 
+	</action_sequence>
+<!-- <variable name="gamestage" value="1" /> -->
 	<action_sequence name="spawn_deadsidekick" template="spawn_single">
 		<variable name="zombiename" value="animalDeadBearFriend" />
 		<variable name="alertsound" value="bearalert" />
-		<variable name="gamestage" value="1" />
+
 	</action_sequence>
 
 
 
 		<!-- Begin Thunderdome -->
 	<action_sequence name="#thunderdome">
-		<variable name="gamestage" value="1" />
 		<property name="refund_inactivity" value="false"/>
 		<property name="category" value="twitch_actions"/>
 
@@ -92,12 +90,12 @@
 			<property name="max_distance" value="20" />
 		</action> -->
 
-		<!-- Wait A Damn Second -->
+		<!-- Wait A Damn Second
 		<action class="Delay">
 			<property name="time" value="20" />
 			<property name="phase" value="5" />
 		</action>
-
+-->
 		<!-- Bye Felecia -->
 		<action class="RandomTeleport">
 			<property name="target_group" value="goodGuys" />

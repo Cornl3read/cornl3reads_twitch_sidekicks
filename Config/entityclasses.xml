@@ -1,5 +1,5 @@
 <config>
-	<set xpath="/entity_classes">
+	<append xpath="/entity_classes">
         <entity_class name="animalWolfFriend" extends="animalWolf">
             <property name="AITask-4" value="ApproachAndAttackTarget" data="class=EntityZombie,20"/>
             <!-- Stealth -->
@@ -33,5 +33,5 @@
                 <passive_effect name="HealthMax" operation="base_set" value="10000"/>
             </effect_group>
         </entity_class>
-    </set>
+    </append>
 </config>

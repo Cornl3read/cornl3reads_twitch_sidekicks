@@ -1,7 +1,9 @@
 <config>
 	<append xpath="/twitch">
 
-        <action name="twitch_WolfFriend" extends="twitch_boomZombie">
+        <action name="twitch_WolfFriend" extends="twitch_normalZombie">
+			<property name="category" value="Spawns" />
+			<property name="is_positive" value="true" />
 			<property name="command" value="#spawn_sidekick" />
 			<property name="command_key" value="TwitchAction_SpawnWolfFriendCommand" />
 			<property name="title_key" value="TwitchAction_SpawnWolfFriend" />
@@ -13,7 +15,9 @@
 			<property name="enabled" value="true" />
 		</action>
 
-		<action name="twitch_BigWolfFriend" extends="twitch_boomZombie">
+		<action name="twitch_BigWolfFriend" extends="twitch_normalZombie">
+			<property name="is_positive" value="true" />
+			<property name="category" value="Spawns" />
 			<property name="command" value="#spawn_bigsidekick" />
 			<property name="command_key" value="TwitchAction_SpawnBigWolfFriendCommand" />
 			<property name="title_key" value="TwitchAction_SpawnWolfFriend" />
@@ -25,7 +29,9 @@
 			<property name="enabled" value="true" />
 		</action>
 
-		<action name="twitch_DeadBearFriend" extends="twitch_boomZombie">
+		<action name="twitch_DeadBearFriend" extends="twitch_normalZombie">
+			<property name="category" value="Spawns" />
+			<property name="is_positive" value="true" />
 			<property name="command" value="#spawn_deadsidekick" />
 			<property name="command_key" value="TwitchAction_SpawnDeadBearFriendCommand" />
 			<property name="title_key" value="TwitchAction_SpawnDeadBearFriend" />
@@ -38,13 +44,15 @@
 		</action>
 
 		<action name="twitch_thunderdome">
+			<property name="category" value="Spawns" />
+			<property name="is_positive" value="true" />
 			<property name="command" value="#thunderdome" />
 			<property name="command_key" value="TwitchAction_ThunderdomeCommand" />
 			<property name="title_key" value="TwitchAction_Thunderdome" />
 			<property name="description_key" value="TwitchAction_ThunderdomeDesc" />
 			<property name="start_gamestage" value="1" />
 			<property name="event_name" value="thunderdome" />
-			<property name="default_cost" value="1000" />
+			<property name="default_cost" value="10" />
 			<property name="cooldown" value="120" />
 			<property name="enabled" value="true" />
 		</action>
