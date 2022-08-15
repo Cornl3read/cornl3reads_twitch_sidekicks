@@ -87,19 +87,12 @@
 			<property name="kill" value="animalBigWolfFriend" param1="zombiename"/>
 		</action>
 
-		<!-- Kill the sidekicks before the teleport so that they can be spawned fresh for next wave
-		<action class="kill">
-			<property name="phase" value="5" />
-			<property name="entity_names" value="animalBigWolfFriend" param1="zombiename" />
-			<property name="max_distance" value="20" />
-		</action> -->
-
-		<!-- Wait A Damn Second
+		<!-- Wait A Damn Second -->
 		<action class="Delay">
 			<property name="time" value="20" />
 			<property name="phase" value="5" />
 		</action>
--->
+
 		<!-- Bye Felecia -->
 		<action class="RandomTeleport">
 			<property name="target_group" value="goodGuys" />
@@ -130,17 +123,41 @@
 			<property name="phase" value="7" />
 		</action>
 
-		<!-- Wave 2 ~ ~ ~ ~ Lil harder - ferals and cops, soldiers -->
+		<!-- Wave 2 ~ ~ ~ ~ Lil harder - ferals and cops, soldiers, consists of 2 spawn waves -->
 		<action class="SpawnEntity">
-			<property name="phase" value="3" />
+			<property name="phase" value="8" />
 			<property name="min_distance" value="6" />
 			<property name="max_distance" value="12" />
 			<property name="entity_names" value="zombieArlene,zombieMarlene,zombiePartyGirl,zombieSteveFeral,
 				zombieNurse,zombieJoeFeral,zombieMoe,zombieSoldierFeral,zombieSteveCrawler,zombieFatCop,zombieSoldier,
 				zombieFatHawaiian,zombieFatHawaiianFeral" param1="zombiename" />
 			<property name="add_to_group" value="badGuys" />
-			<property name="spawn_count" value="1" />
+			<property name="spawn_count" value="10" />
 			<property name="party_addition" value="1" />
+		</action>
+
+		<action class="Delay">
+			<property name="time" value="10" />
+			<property name="phase" value="8" />
+		</action>
+
+		<action class="SpawnEntity">
+			<property name="phase" value="9" />
+			<property name="min_distance" value="6" />
+			<property name="max_distance" value="12" />
+			<property name="entity_names" value="zombieArlene,zombieMarlene,zombiePartyGirl,zombieSteveFeral,
+				zombieNurse,zombieJoeFeral,zombieMoe,zombieSoldierFeral,zombieSteveCrawler,zombieFatCop,zombieSoldier,
+				zombieFatHawaiian,zombieFatHawaiianFeral" param1="zombiename" />
+			<property name="add_to_group" value="badGuys" />
+			<property name="spawn_count" value="10" />
+			<property name="party_addition" value="1" />
+		</action>
+
+		<action class="WaitForDead">
+			<property name="target_group" value="badGuys" />
+			<property name="phase_on_despawn" value="12" /><!-- will be changed later to last phase -->
+			<property name="phase" value="10" />
+			<property name="kill" value="animalBigWolfFriend" param1="zombiename"/>
 		</action>
 
 

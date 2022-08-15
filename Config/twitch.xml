@@ -56,8 +56,7 @@
 			<property name="cooldown" value="500" />
 			<property name="enabled" value="true" />
 		</action>
-
-
+		
 		<action name="twitch_thunderdome">
 			<property name="category" value="Spawns" />
 			<property name="is_positive" value="true" />
