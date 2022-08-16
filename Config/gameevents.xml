@@ -96,7 +96,7 @@
 		</action_sequence>
 
 		<!-- That One Skank everybody Hates -->
-		<action_sequence name="spawn_superfriend" template="spawn_single">
+		<action_sequence name="spawn_superfriend">
 			<action class="AddPartyToGroup">
 				<property name="phase" value="0" />
 				<property name="group_name" value="goodGuys" />
