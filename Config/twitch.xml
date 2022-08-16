@@ -2,6 +2,7 @@
 	<append xpath="/twitch">
 
         <action name="twitch_WolfFriend" extends="twitch_normalZombie">
+			<property name="start_gamestage" value="10" />
 			<property name="category" value="Spawns" />
 			<property name="is_positive" value="true" />
 			<property name="command" value="#spawn_sidekick" />
@@ -16,6 +17,7 @@
 		</action>
 
 		<action name="twitch_BigWolfFriend" extends="twitch_normalZombie">
+			<property name="start_gamestage" value="35" />
 			<property name="is_positive" value="true" />
 			<property name="category" value="Spawns" />
 			<property name="command" value="#spawn_bigsidekick" />
@@ -30,6 +32,7 @@
 		</action>
 
 		<action name="twitch_DeadBearFriend" extends="twitch_normalZombie">
+			<property name="start_gamestage" value="100" />
 			<property name="category" value="Spawns" />
 			<property name="is_positive" value="true" />
 			<property name="command" value="#spawn_deadsidekick" />
@@ -44,6 +47,7 @@
 		</action>
 
 		<action name="twitch_SuperFriend" extends="twitch_normalZombie">
+			<property name="start_gamestage" value="150" />
 			<property name="category" value="Spawns" />
 			<property name="is_positive" value="true" />
 			<property name="command" value="#spawn_superfriend" />
@@ -58,6 +62,7 @@
 		</action>
 
 		<action name="twitch_thunderdome">
+			<property name="start_gamestage" value="200" />
 			<property name="category" value="Spawns" />
 			<property name="is_positive" value="true" />
 			<property name="command" value="#thunderdome" />
