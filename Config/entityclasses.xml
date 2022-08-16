@@ -1,7 +1,20 @@
 <config>
 	<append xpath="/entity_classes">
         <entity_class name="animalWolfFriend" extends="animalWolf">
+
+            <property name="AITask-1" value="BreakBlock"/>
+	        <property name="AITask-2" value="Territorial"/>
+            <property name="AITask-3" value="RunawayWhenHurt" data="runChance=0.1;healthPer=0.3;healthPerMax=0.6"/>
             <property name="AITask-4" value="ApproachAndAttackTarget" data="class=EntityZombie,20"/>
+            <property name="AITask-5" value="ApproachSpot"/>
+	        <property name="AITask-6" value="Look"/>
+	        <property name="AITask-7" value="Wander"/>
+            <property name="AITask-8" value=""/>
+	        <property name="AITarget-1" value="SetAsTargetIfHurt"/>
+	        <property name="AITarget-2" value="BlockingTargetTask"/>
+	        <property name="AITarget-3" value="SetNearestEntityAsTarget" data="class=EntityPlayer,2,3,EntityZombie,0,0"/>
+            <property name="AITarget-4" value=""/>
+
             <!-- Stealth -->
             <property name="SmellAlertThreshold" value="8"/>
             <effect_group name="Base Effects">
@@ -12,6 +25,7 @@
 
         <entity_class name="animalBigWolfFriend" extends="animalDireWolf">
             <property name="AITask-3" value="ApproachAndAttackTarget" data="class=EntityZombie,20"/>
+            <property name="AITarget-3" value="SetNearestEntityAsTarget" data="class=EntityPlayer,2,3,EntityZombie,0,0"/>
             <effect_group name="Base Effects">
                 <passive_effect name="HealthMax" operation="base_set" value="5000"/>
             </effect_group>
@@ -20,7 +34,9 @@
 
         <entity_class name="animalDeadBearFriend" extends="animalZombieBear">
             <property name="Tags" value="entity,animal,zombie,hostile,bear"/>
+            <property name="AITask-3" value="Territorial"/>
             <property name="AITask-5" value="ApproachAndAttackTarget" data="class=EntityZombie,20"/>
+            <property name="AITarget-3" value="SetNearestEntityAsTarget" data="class=EntityPlayer,2,3,EntityZombie,0,0"/>
             <!-- Gameplay  -->
             <property name="HandItem" value="meleeHandAnimalZombieBear"/>
             <effect_group name="Base Effects">
@@ -31,7 +47,7 @@
         <entity_class name="animalBossGraceFriend" extends="animalBossGrace">
             <property name="Tags" value="entity,animal,zombie,hostile,boar"/>
             <property name="AITask-4" value="ApproachAndAttackTarget" data="class=EntityZombie,10"/>
-            <property name="AITarget-4" value="SetNearestEntityAsTarget" data="class=EntityZombie,0,3,EntityPlayer,0,0"/>
+            <property name="AITarget-4" value="SetNearestEntityAsTarget" data="class=EntityPlayer,2,3,EntityZombie,0,0"/>
             <!-- Gameplay  -->
             <property name="HandItem" value="meleeHandAnimalZombieBear"/>
             <effect_group name="Base Effects">
