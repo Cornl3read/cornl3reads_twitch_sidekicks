@@ -1,4 +1,5 @@
 # cornl3reads_twitch_sidekicks
+A20 ONLY - Needs Updating For A21
 Adds commands to twitch integration to give the solos out there a bit of a boost when fighting :)
 Big thanks to Khaine and the entire DF discord for the nudge.
 Bigger thanks to the Gun. You created a monster.
